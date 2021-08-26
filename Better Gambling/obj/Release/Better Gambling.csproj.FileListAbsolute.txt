@@ -1,0 +1,13 @@
+C:\Users\James\source\repos\Better Gambling\Better Gambling\bin\Release\Better Gambling.exe.config
+C:\Users\James\source\repos\Better Gambling\Better Gambling\bin\Release\Better Gambling.exe
+C:\Users\James\source\repos\Better Gambling\Better Gambling\bin\Release\Better Gambling.pdb
+C:\Users\James\source\repos\Better Gambling\Better Gambling\bin\Release\PresentationCore.dll
+C:\Users\James\source\repos\Better Gambling\Better Gambling\bin\Release\WindowsBase.dll
+C:\Users\James\source\repos\Better Gambling\Better Gambling\obj\Release\Better Gambling.csproj.CoreCompileInputs.cache
+C:\Users\James\source\repos\Better Gambling\Better Gambling\obj\Release\Better Gambling.csproj.CopyComplete
+C:\Users\James\source\repos\Better Gambling\Better Gambling\obj\Release\Better Gambling.exe
+C:\Users\James\source\repos\Better Gambling\Better Gambling\obj\Release\Better Gambling.pdb
+C:\Users\James\source\repos\Better Gambling\Better Gambling\obj\Release\Better Gambling.csprojAssemblyReference.cache
+C:\Users\James\source\repos\Better Gambling\Better Gambling\bin\Release\WindowsInput.dll
+C:\Users\James\source\repos\Better Gambling\Better Gambling\bin\Release\WindowsInput.pdb
+C:\Users\James\source\repos\Better Gambling\Better Gambling\bin\Release\WindowsInput.xml
