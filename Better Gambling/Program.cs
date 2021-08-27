@@ -71,7 +71,7 @@ class Gambling
             }
             else
             {
-                Console.WriteLine(@"note: The default path is C:\Program Files (x86)\Steam\steamapps\common\Garry's Mod\garrysmod\cfg");
+                Console.WriteLine(@"note: The default path is C:\Program Files (x86)\Steam\steamapps\common\GarrysMod\garrysmod\cfg");
                 Console.Write("Enter gmod cfg path: ");
                 File.WriteAllText("gamblepath.txt", Console.ReadLine());
                 goto invalidpath;
