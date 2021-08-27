@@ -545,7 +545,7 @@ class ThreeCardPoker : IGambleGame
                     }
                     else
                     {
-                        ConCommand.Say("[Poker] Push: " + Gambling.FormatMoney(ante * 4) + " returned to player.");
+                        ConCommand.Say("[Poker] Push: " + Gambling.FormatMoney(ante * 2) + " returned to player.");
                     }
 
                     if (pairPlus > 0)
