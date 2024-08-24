@@ -29,3 +29,6 @@ The `ifBars/Better-Gambling` repository introduces several improvements and opti
 2. **Refined Game Logic**: Adjustments and refinements to the game state management ensure faster transitions between game phases and improve the overall user experience. For example, the delay between being able to use Alt + Key commands has been changed from 1 second to 3/5ths of a second, or 0.6 second(s). This example is what allows you to run games like blackjack just a bit faster, especially between starting games and first command.
 
 3. **Additional Game Features**: New features and enhancements in existing games provide a richer and more immersive gambling experience for users. (COMING SOON BASED ON USER FEEDBACK)
+
+## TLDR
+This is a gambling program for gmod, mainly darkrp, which allows you to use binds to play games like blackjack. This newer version is good if you have a potato pc, or generally care about performance. The original is old and unoptimized, this newer version runs on less resources than notepad, and is faster and more responsive.
