@@ -24,10 +24,8 @@
 
 The `ifBars/Better-Gambling` repository introduces several improvements and optimizations over the original `mwhitenc4/Better-Gambling` project:
 
-1. **Performance Enhancements**: Optimized random number generation and memory management have been implemented to improve the overall performance and responsiveness of the games.
+1. **Performance Enhancements**: Optimized random number generation and memory management have been implemented to improve the overall performance and responsiveness of the games. Where applicable, asynchronous programming has been utilized to keep the application quick and responsive, while minimizing cpu and ram usage.
 
 2. **Refined Game Logic**: Adjustments and refinements to the game state management ensure smoother transitions between game phases and improve the overall user experience.
 
-3. **Asynchronous Operations**: Where applicable, asynchronous programming has been utilized to keep the application quick and responsive, while minimizing cpu and ram usage.
-
-4. **Additional Game Features**: New features and enhancements in existing games provide a richer and more immersive gambling experience for users. (COMING SOON)
+3. **Additional Game Features**: New features and enhancements in existing games provide a richer and more immersive gambling experience for users. (COMING SOON)
