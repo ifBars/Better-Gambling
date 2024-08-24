@@ -7,15 +7,15 @@
       "RelativeMoniker": "D:0:0:{9648E75D-0047-4EC6-8E6C-8396C8F60590}|Better Gambling\\Better Gambling.csproj|solutionrelative:better gambling\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9648E75D-0047-4EC6-8E6C-8396C8F60590}|Better Gambling\\Better Gambling.csproj|c:\\users\\ghost\\desktop\\coding\\c#\\better-gambling\\better gambling\\deck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9648E75D-0047-4EC6-8E6C-8396C8F60590}|Better Gambling\\Better Gambling.csproj|C:\\Users\\ghost\\Desktop\\Coding\\C#\\Better-Gambling\\better gambling\\deck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9648E75D-0047-4EC6-8E6C-8396C8F60590}|Better Gambling\\Better Gambling.csproj|solutionrelative:better gambling\\deck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9648E75D-0047-4EC6-8E6C-8396C8F60590}|Better Gambling\\Better Gambling.csproj|c:\\users\\ghost\\desktop\\coding\\c#\\better-gambling\\better gambling\\games\\blackjack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9648E75D-0047-4EC6-8E6C-8396C8F60590}|Better Gambling\\Better Gambling.csproj|C:\\Users\\ghost\\Desktop\\Coding\\C#\\Better-Gambling\\better gambling\\games\\blackjack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9648E75D-0047-4EC6-8E6C-8396C8F60590}|Better Gambling\\Better Gambling.csproj|solutionrelative:better gambling\\games\\blackjack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9648E75D-0047-4EC6-8E6C-8396C8F60590}|Better Gambling\\Better Gambling.csproj|c:\\users\\ghost\\desktop\\coding\\c#\\better-gambling\\better gambling\\macro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9648E75D-0047-4EC6-8E6C-8396C8F60590}|Better Gambling\\Better Gambling.csproj|C:\\Users\\ghost\\Desktop\\Coding\\C#\\Better-Gambling\\better gambling\\macro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9648E75D-0047-4EC6-8E6C-8396C8F60590}|Better Gambling\\Better Gambling.csproj|solutionrelative:better gambling\\macro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -38,8 +38,7 @@
               "RelativeToolTip": "Better Gambling\\Macro.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-24T05:49:47.543Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-24T05:49:47.543Z"
             },
             {
               "$type": "Document",
@@ -51,8 +50,7 @@
               "RelativeToolTip": "Better Gambling\\Games\\Blackjack.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAABEAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-24T05:34:20.356Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-24T05:34:20.356Z"
             },
             {
               "$type": "Document",
@@ -64,8 +62,7 @@
               "RelativeToolTip": "Better Gambling\\Deck.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-24T05:16:13.783Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-24T05:16:13.783Z"
             },
             {
               "$type": "Document",
@@ -75,7 +72,7 @@
               "RelativeDocumentMoniker": "Better Gambling\\Program.cs",
               "ToolTip": "C:\\Users\\ghost\\Desktop\\Coding\\C#\\Better-Gambling\\Better Gambling\\Program.cs",
               "RelativeToolTip": "Better Gambling\\Program.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAADwvycAAAAFAAAA",
+              "ViewState": "AQIAAJcAAAAAAAAAAAAQwLMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-24T05:13:26.806Z",
               "EditorCaption": ""
