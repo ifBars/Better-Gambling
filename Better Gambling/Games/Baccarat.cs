@@ -13,8 +13,8 @@ class Baccarat : IGambleGame
 
     public Dictionary<Key, Action> Actions { get; private set; } = new Dictionary<Key, Action>();
 
-    List<Card> playerHand;
-    List<Card> bankerHand;
+    List<Card> playerHand = new List<Card>();
+    List<Card> bankerHand = new List<Card>();
 
     bool playerStood = false;
     bool bankerStood = false;
@@ -53,8 +53,8 @@ class Baccarat : IGambleGame
     {
         ConCommand.Say("[Baccarat] Game Started");
 
-        playerHand = new List<Card>();
-        bankerHand = new List<Card>();
+        playerHand.Clear();
+        bankerHand.Clear();
         playerStood = false;
         bankerStood = false;
     }

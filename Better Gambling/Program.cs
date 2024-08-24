@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -29,7 +27,7 @@ class Gambling
         }
         catch (Exception e)
         {
-            Console.WriteLine("Caught: " + e.Message);
+            Console.WriteLine("Error setting clipboard: " + e.Message);
         }
     }
 
@@ -44,44 +42,69 @@ class Gambling
     }
 
     [STAThread]
-    static void Main(string[] args)
+    static async Task Main(string[] args)
     {
-        invalidpath:;
-        if (Directory.Exists(ConCommand.cfgPath))
+        string cfgPath = await LoadOrPromptForPathAsync();
+        ShowInitialInstructions();
+
+        List<IGambleGame> games = InitializeGames();
+
+        while (true)
         {
-            Console.WriteLine("Using default gmod path");
+            IGambleGame selectedGame = SelectGame(games);
+            selectedGame.InitializeActions();
+            Dictionary<Key, bool> keyPressed = InitializeKeyPressStates(selectedGame);
+
+            selectedGame.GameStart();
+            await RunGameLoopAsync(selectedGame, keyPressed);
         }
-        else
+    }
+
+    private static async Task<string> LoadOrPromptForPathAsync()
+    {
+        const string defaultPath = @"C:\Program Files (x86)\Steam\steamapps\common\GarrysMod\garrysmod\cfg";
+        string path = ConCommand.cfgPath;
+
+        if (!Directory.Exists(path))
         {
             if (File.Exists("gamblepath.txt"))
             {
-                string path = File.ReadAllText("gamblepath.txt");
-
-                if (Directory.Exists(path))
-                {
-                    ConCommand.cfgPath = path;
-                    Console.WriteLine("Path successfully loaded! (If the path is incorrect, please delete gamblepath.txt in the root of this folder)");
-                }
-                else
-                {
-                    Console.WriteLine("Invalid path found... please enter again");
-                    File.Delete("gamblepath.txt");
-                    goto invalidpath;
-                }
+                path = File.ReadAllText("gamblepath.txt");
             }
             else
             {
-                Console.WriteLine(@"note: The default path is C:\Program Files (x86)\Steam\steamapps\common\GarrysMod\garrysmod\cfg");
+                Console.WriteLine($"Note: The default path is {defaultPath}");
                 Console.Write("Enter gmod cfg path: ");
-                File.WriteAllText("gamblepath.txt", Console.ReadLine());
-                goto invalidpath;
+                path = Console.ReadLine();
+                File.WriteAllText("gamblepath.txt", path);
             }
+
+            if (!Directory.Exists(path))
+            {
+                Console.WriteLine("Invalid path. Please try again.");
+                return await LoadOrPromptForPathAsync();
+            }
+
+            ConCommand.cfgPath = path;
+            Console.WriteLine("Path successfully loaded! (If the path is incorrect, please delete gamblepath.txt in the root of this folder)");
+        }
+        else
+        {
+            Console.WriteLine("Using default gmod path");
         }
 
+        return path;
+    }
+
+    private static void ShowInitialInstructions()
+    {
         Console.WriteLine("WARNING, READ BELOW");
         Console.WriteLine("Make sure you type 'bind b \"exec gamblecmd\"' into the gmod console if this is your first time using this script");
+    }
 
-        List<IGambleGame> games = new List<IGambleGame>()
+    private static List<IGambleGame> InitializeGames()
+    {
+        return new List<IGambleGame>
         {
             new Blackjack(),
             new Dice(),
@@ -97,67 +120,55 @@ class Gambling
             new InstantInvestments(),
             new HiLo()
         };
+    }
 
-        gameSelect:;
-
-        IGambleGame selectedGame = null;
-
-        for (int i = 0; i < games.Count; i++)
+    private static IGambleGame SelectGame(List<IGambleGame> games)
+    {
+        while (true)
         {
-            Console.Write(i + ": " + games[i].GetName);
-
-            if (i != games.Count - 1)
+            Console.WriteLine("Select a game by entering its ID:");
+            for (int i = 0; i < games.Count; i++)
             {
-                Console.Write(", ");
-            }
-        }
-
-        Console.WriteLine();
-
-        int selected = -1;
-        while (selectedGame == null)
-        {
-            Console.Write("Enter Game ID: ");
-
-            if (int.TryParse(Console.ReadLine(), out selected))
-            {
-                if (selected >= 0 && selected < games.Count)
-                {
-                    selectedGame = games[selected];
-
-                    Console.WriteLine("Selected: " + selectedGame.GetName);
-                    Console.WriteLine(selectedGame.GetDescription);
-
-                    break;
-                }
+                Console.WriteLine($"{i}: {games[i].GetName}");
             }
 
-            Console.WriteLine("Try again...");
+            if (int.TryParse(Console.ReadLine(), out int selected) && selected >= 0 && selected < games.Count)
+            {
+                IGambleGame selectedGame = games[selected];
+                Console.WriteLine($"Selected: {selectedGame.GetName}");
+                Console.WriteLine(selectedGame.GetDescription);
+                return selectedGame;
+            }
+            else
+            {
+                Console.WriteLine("Invalid selection. Try again.");
+            }
         }
+    }
 
-        selectedGame.InitializeActions();
-
-        Dictionary<Key, bool> keyPressed = new Dictionary<Key, bool>();
-
-        foreach (KeyValuePair<Key, Action> action in selectedGame.Actions)
+    private static Dictionary<Key, bool> InitializeKeyPressStates(IGambleGame selectedGame)
+    {
+        var keyPressed = new Dictionary<Key, bool>();
+        foreach (var action in selectedGame.Actions)
         {
             keyPressed[action.Key] = false;
         }
+        return keyPressed;
+    }
 
-        selectedGame.GameStart();
-
+    private static async Task RunGameLoopAsync(IGambleGame selectedGame, Dictionary<Key, bool> keyPressed)
+    {
         while (true)
         {
             if (Keyboard.IsKeyDown(Key.LeftAlt))
             {
-                foreach (KeyValuePair<Key, Action> action in selectedGame.Actions)
+                foreach (var action in selectedGame.Actions)
                 {
                     if (Keyboard.IsKeyDown(action.Key))
                     {
                         if (!keyPressed[action.Key])
                         {
                             keyPressed[action.Key] = true;
-
                             action.Value();
                         }
                     }
@@ -170,10 +181,11 @@ class Gambling
                 if (Keyboard.IsKeyDown(Key.Delete))
                 {
                     Console.Clear();
-                    goto gameSelect;
+                    break;
                 }
             }
             selectedGame.MainLoop();
+            await Task.Delay(10);
         }
     }
 }

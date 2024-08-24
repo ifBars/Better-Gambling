@@ -11,3 +11,16 @@ C:\Users\James\source\repos\Better Gambling\Better Gambling\obj\Release\Better G
 C:\Users\James\source\repos\Better Gambling\Better Gambling\bin\Release\WindowsInput.dll
 C:\Users\James\source\repos\Better Gambling\Better Gambling\bin\Release\WindowsInput.pdb
 C:\Users\James\source\repos\Better Gambling\Better Gambling\bin\Release\WindowsInput.xml
+C:\Users\ghost\Desktop\Coding\C#\Better-Gambling\Better Gambling\bin\Release\Better Gambling.exe.config
+C:\Users\ghost\Desktop\Coding\C#\Better-Gambling\Better Gambling\bin\Release\Better Gambling.exe
+C:\Users\ghost\Desktop\Coding\C#\Better-Gambling\Better Gambling\bin\Release\Better Gambling.pdb
+C:\Users\ghost\Desktop\Coding\C#\Better-Gambling\Better Gambling\bin\Release\PresentationCore.dll
+C:\Users\ghost\Desktop\Coding\C#\Better-Gambling\Better Gambling\bin\Release\WindowsBase.dll
+C:\Users\ghost\Desktop\Coding\C#\Better-Gambling\Better Gambling\bin\Release\WindowsInput.dll
+C:\Users\ghost\Desktop\Coding\C#\Better-Gambling\Better Gambling\bin\Release\WindowsInput.pdb
+C:\Users\ghost\Desktop\Coding\C#\Better-Gambling\Better Gambling\bin\Release\WindowsInput.xml
+C:\Users\ghost\Desktop\Coding\C#\Better-Gambling\Better Gambling\obj\Release\Better Gambling.csproj.AssemblyReference.cache
+C:\Users\ghost\Desktop\Coding\C#\Better-Gambling\Better Gambling\obj\Release\Better Gambling.csproj.CoreCompileInputs.cache
+C:\Users\ghost\Desktop\Coding\C#\Better-Gambling\Better Gambling\obj\Release\Better G.F29FC4B1.Up2Date
+C:\Users\ghost\Desktop\Coding\C#\Better-Gambling\Better Gambling\obj\Release\Better Gambling.exe
+C:\Users\ghost\Desktop\Coding\C#\Better-Gambling\Better Gambling\obj\Release\Better Gambling.pdb

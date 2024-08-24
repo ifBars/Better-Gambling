@@ -18,11 +18,12 @@ class Roulette : IGambleGame
         
     }
 
+    private Random rand = new Random();
+
     public void InitializeActions()
     {
         Actions[Key.I] = () =>
         {
-            Random rand = new Random();
             int result = rand.Next(0, 37);
             string colour = "green";
 

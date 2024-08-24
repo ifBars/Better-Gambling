@@ -15,8 +15,8 @@ class Blackjack : IGambleGame
 
     Deck deck = new Deck();
 
-    List<Card> playerHand;
-    List<Card> dealerHand;
+    List<Card> playerHand = new List<Card>();
+    List<Card> dealerHand = new List<Card>();
     bool playerStood;
 
     public int GetTotal(List<Card> hand)
@@ -57,8 +57,8 @@ class Blackjack : IGambleGame
     public void GameStart()
     {
         ConCommand.Say("[Blackjack] Game Started");
-        playerHand = new List<Card>();
-        dealerHand = new List<Card>();
+        playerHand.Clear();
+        dealerHand.Clear();
         playerStood = false;
     }
 
@@ -70,82 +70,88 @@ class Blackjack : IGambleGame
             ConCommand.Say("[Blackjack] Player stood at " + GetTotal(playerHand));
         }
     }
-
+    
     public void Hit()
     {
         if (playerStood)
         {
             Card newCard = deck.TakeNext();
-
             dealerHand.Add(newCard);
 
-            if(GetTotal(dealerHand) > 21)
+            int dealerTotal = GetTotal(dealerHand);
+            int playerTotal = GetTotal(playerHand);
+
+            if (dealerTotal > 21)
             {
-                if (playerHand.Count == 2 && GetTotal(playerHand) == 21)
+                if (playerHand.Count == 2 && playerTotal == 21)
                 {
-                    ConCommand.Say("[Blackjack] (PLAYER BLACKJACK) Dealer Hit: " + newCard.GetName + " (Total: " + GetTotal(dealerHand) + ") | Player Total: " + GetTotal(playerHand));
+                    ConCommand.Say("[Blackjack] (PLAYER BLACKJACK) Dealer Hit: " + newCard.GetName + " (Total: " + dealerTotal + ") | Player Total: " + playerTotal);
                 }
                 else
                 {
-                    ConCommand.Say("[Blackjack] (DEALER BUST) Dealer Hit: " + newCard.GetName + " (Total: " + GetTotal(dealerHand) + ") | Player Total: " + GetTotal(playerHand));
+                    ConCommand.Say("[Blackjack] (DEALER BUST) Dealer Hit: " + newCard.GetName + " (Total: " + dealerTotal + ") | Player Total: " + playerTotal);
                 }
             }
-            else if(GetTotal(dealerHand) >= 17)
+            else if (dealerTotal >= 17)
             {
-                if(GetTotal(dealerHand) > GetTotal(playerHand))
+                if (dealerTotal > playerTotal)
                 {
-                    ConCommand.Say("[Blackjack] (DEALER WIN) Dealer Hit: " + newCard.GetName + " (Total: " + GetTotal(dealerHand) + ") | Player Total: " + GetTotal(playerHand));
+                    ConCommand.Say("[Blackjack] (DEALER WIN) Dealer Hit: " + newCard.GetName + " (Total: " + dealerTotal + ") | Player Total: " + playerTotal);
                 }
-                else if(GetTotal(dealerHand) == GetTotal(playerHand))
+                else if (dealerTotal == playerTotal)
                 {
-                    ConCommand.Say("[Blackjack] (PUSH) Dealer Hit: " + newCard.GetName + " (Total: " + GetTotal(dealerHand) + ") | Player Total: " + GetTotal(playerHand));
+                    ConCommand.Say("[Blackjack] (PUSH) Dealer Hit: " + newCard.GetName + " (Total: " + dealerTotal + ") | Player Total: " + playerTotal);
                 }
                 else
                 {
-                    if (playerHand.Count == 2 && GetTotal(playerHand) == 21)
+                    if (playerHand.Count == 2 && playerTotal == 21)
                     {
-                        ConCommand.Say("[Blackjack] (PLAYER BLACKJACK) Dealer Hit: " + newCard.GetName + " (Total: " + GetTotal(dealerHand) + ") | Player Total: " + GetTotal(playerHand));
+                        ConCommand.Say("[Blackjack] (PLAYER BLACKJACK) Dealer Hit: " + newCard.GetName + " (Total: " + dealerTotal + ") | Player Total: " + playerTotal);
                     }
                     else
                     {
-                        ConCommand.Say("[Blackjack] (PLAYER WIN) Dealer Hit: " + newCard.GetName + " (Total: " + GetTotal(dealerHand) + ") | Player Total: " + GetTotal(playerHand));
+                        ConCommand.Say("[Blackjack] (PLAYER WIN) Dealer Hit: " + newCard.GetName + " (Total: " + dealerTotal + ") | Player Total: " + playerTotal);
                     }
                 }
             }
             else
             {
-                ConCommand.Say("[Blackjack] Dealer Hit: " + newCard.GetName + " (Total: " + GetTotal(dealerHand) + ") | Player Total: " + GetTotal(playerHand));
+                ConCommand.Say("[Blackjack] Dealer Hit: " + newCard.GetName + " (Total: " + dealerTotal + ") | Player Total: " + playerTotal);
             }
         }
-        else if(playerHand.Count == 0)
+        else if (playerHand.Count == 0)
         {
             Card[] newCards = new Card[3]{
-                deck.TakeNext(), // Player's first card
-                deck.TakeNext(), // Player's second card
-                deck.TakeNext() // Dealer's face card
-            };
+            deck.TakeNext(), // Player's first card
+            deck.TakeNext(), // Player's second card
+            deck.TakeNext()  // Dealer's face card
+        };
 
             playerHand.Add(newCards[0]);
             playerHand.Add(newCards[1]);
             dealerHand.Add(newCards[2]);
 
+            int playerTotal = GetTotal(playerHand);
+            int dealerTotal = GetTotal(dealerHand);
+
             ConCommand.Say(
-                "[Blackjack] Player Cards: " + newCards[0].GetName + " and " + newCards[1].GetName + "(Total: " + GetTotal(playerHand) + ") | Dealer Card: " + newCards[2].GetName + " (Total: " + GetTotal(dealerHand) + ")"
+                "[Blackjack] Player Cards: " + newCards[0].GetName + " and " + newCards[1].GetName + " (Total: " + playerTotal + ") | Dealer Card: " + newCards[2].GetName + " (Total: " + dealerTotal + ")"
             );
         }
         else
         {
             Card newCard = deck.TakeNext();
-
             playerHand.Add(newCard);
 
-            if(GetTotal(playerHand) > 21)
+            int playerTotal = GetTotal(playerHand);
+
+            if (playerTotal > 21)
             {
-                ConCommand.Say("[Blackjack] (PLAYER BUST) Player Hit: " + newCard.GetName + " (Total: " + GetTotal(playerHand) + ")");
+                ConCommand.Say("[Blackjack] (PLAYER BUST) Player Hit: " + newCard.GetName + " (Total: " + playerTotal + ")");
             }
             else
             {
-                ConCommand.Say("[Blackjack] Player Hit: " + newCard.GetName + " (Total: " + GetTotal(playerHand) + ")");
+                ConCommand.Say("[Blackjack] Player Hit: " + newCard.GetName + " (Total: " + playerTotal + ")");
             }
         }
     }

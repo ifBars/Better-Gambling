@@ -20,6 +20,7 @@ class Card
 class Deck
 {
     List<Card> cards = new List<Card>();
+    private static Random rand = new Random();
 
     public static string[] cardTypes = new string[]
     {
@@ -79,7 +80,6 @@ class Deck
 
     public void Shuffle()
     {
-        Random rand = new Random();
         for(int i = 0; i < cards.Count; i++)
         {
             int swap = rand.Next(0, cards.Count);
