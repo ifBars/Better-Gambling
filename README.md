@@ -26,6 +26,6 @@ The `ifBars/Better-Gambling` repository introduces several improvements and opti
 
 1. **Performance Enhancements**: Optimized random number generation and memory management have been implemented to improve the overall performance and responsiveness of the games. In testing, cpu usage went from around 10% with the original build, to 0% on this build, while ram usage went from 14 mb to 3.5 mb.
 
-2. **Refined Game Logic**: Adjustments and refinements to the game state management ensure smoother transitions between game phases and improve the overall user experience.
+2. **Refined Game Logic**: Adjustments and refinements to the game state management ensure faster transitions between game phases and improve the overall user experience. For example, the delay between being able to use Alt + Key commands has been changed from 1 second to 3/5ths of a second, or 0.6 second(s). This example is what allows you to run games like blackjack just a bit faster, especially between starting games and first command.
 
-3. **Additional Game Features**: New features and enhancements in existing games provide a richer and more immersive gambling experience for users. (COMING SOON)
+3. **Additional Game Features**: New features and enhancements in existing games provide a richer and more immersive gambling experience for users. (COMING SOON BASED ON USER FEEDBACK)
