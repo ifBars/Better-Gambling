@@ -1,6 +1,6 @@
 # Better-Gambling
 
-**Better-Gambling** is a collection of interactive gambling games implemented in C#. This repository offers a range of popular gambling games, allowing users to experience and learn from the simulation of these games in a virtual environment. This version, developed by `ifBars`, builds upon the original work by `mwhitenc4`, introducing several enhancements for improved performance, usability, and reliability.
+**Better-Gambling** is a collection of interactive gambling games implemented into garry's mod using console binds. This repository offers a range of popular gambling games, allowing users to experience new forms of gambling in darkrp. This version, developed by `ifBars`, builds upon the original work by `mwhitenc4`, introducing several enhancements for improved performance, usability, and reliability.
 
 ## Games Included
 
