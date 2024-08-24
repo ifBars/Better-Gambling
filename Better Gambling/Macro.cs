@@ -18,6 +18,6 @@ static class Macro
         sim.Keyboard.KeyPress(key);
 
         if(delay)
-            Thread.Sleep(1000);
+            Thread.Sleep(600);
     }
 }
